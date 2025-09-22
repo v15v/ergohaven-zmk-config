@@ -91,6 +91,13 @@
             #binding-cells = <0>;
             bindings = <&en DOT>, <&en COMMA>;
         };
+
+        td_3_ru: td_3_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_3_RU";
+            #binding-cells = <0>;
+            bindings = <&en LS(SEMI)>, <&en SEMI>;
+        };
     };
 
     combos {
@@ -473,10 +480,10 @@
         sym_ru {
             display-name = "Symbols";
             bindings = <
-&trans  &en AT            &en LEFT_BRACKET  &td_2   &en RIGHT_BRACKET  &en GRAVE                    &en CARET   &en LT     &en TILDE     &en GT    &en AMPS  &trans
-&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1   &kp RPAR           &trans                       &en DOLLAR  &en LBRC   &en QUESTION  &en RBRC  &en SEMI  &trans
-&trans  &kp LS(NUMBER_3)  &td_5_ru          &td_3   &td_4_ru           &td_6                        &en PIPE    &en SLASH  &en COMMA     &en DOT   &en APOS  &trans
-                          &trans            &trans  &trans             &mo 6      &trans    &trans  &trans      &trans     &trans        &trans
+&trans  &en AT            &en LEFT_BRACKET  &td_2     &en RIGHT_BRACKET  &en GRAVE                    &en CARET   &en LT     &en TILDE     &en GT    &en AMPS  &trans
+&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1     &kp RPAR           &trans                       &en DOLLAR  &en LBRC   &en QUESTION  &en RBRC  &en SEMI  &trans
+&trans  &kp LS(NUMBER_3)  &td_5_ru          &td_3_ru  &td_4_ru           &td_6                        &en PIPE    &en SLASH  &en COMMA     &en DOT   &en APOS  &trans
+                          &trans            &trans    &trans             &mo 6      &trans    &trans  &trans      &trans     &trans        &trans
             >;
         };
 
