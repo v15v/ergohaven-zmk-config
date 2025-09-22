@@ -430,7 +430,7 @@
             bindings = <
 &trans  &m1     &m2     &m3     &m4     &m5                       &m6     &m7     &m8     &m9     &m10    &kp DELETE
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &none   &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
