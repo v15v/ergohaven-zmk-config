@@ -61,7 +61,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_4";
             #binding-cells = <0>;
-            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
+            bindings = <&kp DOT>, <&kp COMMA>;
         };
 
         td_6: td_6 {
@@ -76,6 +76,20 @@
             label = "TD_5";
             #binding-cells = <0>;
             bindings = <&kp ASTERISK>, <&kp HASH>;
+        };
+
+        td_5_ru: td_5_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_5_RU";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK>, <&en HASH>;
+        };
+
+        td_4_ru: td_4_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_4_RU";
+            #binding-cells = <0>;
+            bindings = <&en DOT>, <&en COMMA>;
         };
     };
 
@@ -314,6 +328,90 @@
 
             label = "M10";
         };
+
+        m11: m11 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp D>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "M11";
+        };
+
+        m12: m12 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "M12";
+        };
+
+        m13: m13 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp H>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "M13";
+        };
+
+        m14: m14 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp J>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "M14";
+        };
+
+        m15: m15 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "M15";
+        };
+
+        m16: m16 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp L>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "M16";
+        };
     };
 
     keymap {
@@ -364,7 +462,7 @@
         sym_en {
             bindings = <
 &trans  &kp AT            &kp LEFT_BRACKET  &td_2   &kp RIGHT_BRACKET  &kp GRAVE                    &kp CARET   &kp LT     &kp TILDE     &kp GT    &kp AMPS  &trans
-&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1   &kp RPAR           &kp PLUS                     &kp DOLLAR  &kp LBRC   &kp QUESTION  &kp RBRC  &kp SEMI  &trans
+&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1   &kp RPAR           &trans                       &kp DOLLAR  &kp LBRC   &kp QUESTION  &kp RBRC  &kp SEMI  &trans
 &trans  &ru LS(NUMBER_3)  &td_5             &td_3   &td_4              &td_6                        &kp PIPE    &kp SLASH  &kp COMMA     &kp DOT   &kp APOS  &trans
                           &trans            &trans  &trans             &mo 6      &trans    &trans  &trans      &trans     &trans        &trans
             >;
@@ -376,8 +474,8 @@
             display-name = "Symbols";
             bindings = <
 &trans  &en AT            &en LEFT_BRACKET  &td_2   &en RIGHT_BRACKET  &en GRAVE                    &en CARET   &en LT     &en TILDE     &en GT    &en AMPS  &trans
-&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1   &kp RPAR           &kp PLUS                     &en DOLLAR  &en LBRC   &en QUESTION  &en RBRC  &en SEMI  &trans
-&trans  &kp LS(NUMBER_3)  &td_5             &td_3   &td_4              &td_6                        &en PIPE    &en SLASH  &en COMMA     &en DOT   &en APOS  &trans
+&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1   &kp RPAR           &trans                       &en DOLLAR  &en LBRC   &en QUESTION  &en RBRC  &en SEMI  &trans
+&trans  &kp LS(NUMBER_3)  &td_5_ru          &td_3   &td_4_ru           &td_6                        &en PIPE    &en SLASH  &en COMMA     &en DOT   &en APOS  &trans
                           &trans            &trans  &trans             &mo 6      &trans    &trans  &trans      &trans     &trans        &trans
             >;
         };
@@ -429,8 +527,8 @@
         macros {
             bindings = <
 &trans  &m1     &m2     &m3     &m4     &m5                       &m6     &m7     &m8     &m9     &m10    &kp DELETE
+&trans  &trans  &trans  &m11    &m12    &trans                    &m13    &m14    &m15    &m16    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &none   &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
