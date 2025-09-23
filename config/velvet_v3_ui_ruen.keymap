@@ -168,7 +168,7 @@
 
             label = "EN";
             wait-ms = <0>;
-            tap-ms = <10>;
+            tap-ms = <1000>;
         };
 
         lg_tog: lg_tog {
