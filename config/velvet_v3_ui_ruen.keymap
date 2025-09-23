@@ -168,7 +168,7 @@
 
             label = "EN";
             wait-ms = <0>;
-            tap-ms = <30>;
+            tap-ms = <10>;
         };
 
         lg_tog: lg_tog {
@@ -419,18 +419,6 @@
 
             label = "M16";
         };
-
-        to_sym_en: to_sym_en {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&to_en &mo 4>,
-                <&macro_release>,
-                <&to_ru &mo 1>;
-
-            label = "TO_SYM_EN";
-        };
     };
 
     keymap {
@@ -453,7 +441,7 @@
 &kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE        &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &kp BSPC
 &td_0      &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU       &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &kp LEFT_WIN
 &kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE        &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                         &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_E    &kp RSHFT
-                                    &kp RU_CYRILLIC_HARD_SIGN  &kp RU_CYRILLIC_HA  &kp LCTRL           &mo 3               &lg_space    &kp RET  &to_sym_en          &mo 7                      &kp LEFT_ALT         &none
+                                    &kp RU_CYRILLIC_HARD_SIGN  &kp RU_CYRILLIC_HA  &kp LCTRL           &mo 3               &lg_space    &kp RET  &mo 5               &mo 7                      &kp LEFT_ALT         &none
             >;
         };
 
