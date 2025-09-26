@@ -425,10 +425,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&to_en &mo 4>,
+                <&mo 4 &to_en>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 1 &to_ru>;
+                <&to_ru>;
 
             label = "RU_TEMP_EN";
         };
