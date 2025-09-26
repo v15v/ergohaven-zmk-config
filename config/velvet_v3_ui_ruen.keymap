@@ -424,11 +424,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&to 4 &to_en>,
+                <&macro_press &mo 4>,
+                <&macro_tap &to_en>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&to_ru &to 1>;
+                <&macro_release &to_ru>;
 
             label = "RU_TEMP_EN";
         };
