@@ -33,7 +33,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_0";
             #binding-cells = <0>;
-            bindings = <&lt 10 TAB>, <&mt LWIN TAB>;
+            bindings = <&lt 9 TAB>, <&mt LWIN TAB>;
         };
 
         td_2: td_2 {
@@ -436,6 +436,23 @@
 
             label = "RU_TEMP_EN";
         };
+
+        ru_to_nav_en: ru_to_nav_en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LG(SPACE)>,
+                <&macro_press>,
+                <&mo 2>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 2>,
+                <&macro_tap>,
+                <&kp LG(SPACE)>;
+
+            label = "RU_TO_NAV_EN";
+        };
     };
 
     keymap {
@@ -446,7 +463,7 @@
 &kp ESC    &kp Q  &kp W  &kp E         &kp R      &kp T                        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td_0      &kp A  &kp S  &kp D         &kp F      &kp G                        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp LWIN
 &kp LSHFT  &kp Z  &kp X  &kp C         &kp V      &kp B                        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SQT   &kp RSHFT
-                  &none  &kp LEFT_ALT  &kp LCTRL  &mo 2  &lg_space    &kp RET  &mo 4  &mo 7  &none      &none
+                  &none  &kp LEFT_ALT  &kp LCTRL  &mo 2  &lg_space    &kp RET  &mo 4  &mo 6  &none      &none
             >;
 
             display-name = "Base";
@@ -458,7 +475,7 @@
 &kp ESC    &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &kp RU_CYRILLIC_IE                        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA      &kp RU_CYRILLIC_ZE   &kp BSPC
 &td_0      &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O          &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE         &kp RU_CYRILLIC_ZHE  &kp LEFT_WIN
 &kp LSHFT  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                         &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E    &kp RSHFT
-                                    &none                 &kp LEFT_ALT        &kp LCTRL           &mo 3               &lg_space    &kp RET  &ru_to_sym_en       &mo 7                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
+                                    &none                 &kp LEFT_ALT        &kp LCTRL           &ru_to_nav_en       &lg_space    &kp RET  &ru_to_sym_en       &mo 6                      &kp RU_CYRILLIC_HA   &kp RU_CYRILLIC_HARD_SIGN
             >;
         };
 
@@ -467,7 +484,7 @@
 &trans  &kp N1      &kp N2           &kp N3       &kp N4       &kp N5                       &kp N6          &kp N7          &kp N8        &kp N9           &kp N0    &trans
 &trans  &kp HOME    &kp INS          &kp DELETE   &kp END      &lg_tog                      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMI  &trans
 &trans  &kp K_UNDO  &kp LS(LC(INS))  &kp LC(INS)  &kp LS(INS)  &kp MINUS                    &none           &none           &kp COMMA     &kp DOT          &kp APOS  &trans
-                    &trans           &trans       &trans       &trans     &trans    &trans  &mo 6           &trans          &trans        &trans
+                    &trans           &trans       &trans       &trans     &trans    &trans  &mo 5           &trans          &trans        &trans
             >;
 
             display-name = "Navigation";
@@ -479,7 +496,7 @@
 &trans  &kp N1      &kp N2           &kp N3       &kp N4       &kp N5                       &kp N6          &kp N7          &kp N8        &kp N9           &kp N0    &trans
 &trans  &kp HOME    &kp INS          &kp DELETE   &kp END      &lg_tog                      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &en SEMI  &trans
 &trans  &kp K_UNDO  &kp LS(LC(INS))  &kp LC(INS)  &kp LS(INS)  &kp MINUS                    &none           &none           &en COMMA     &en DOT          &en APOS  &trans
-                    &trans           &trans       &trans       &trans     &trans    &trans  &mo 6           &trans          &trans        &trans
+                    &trans           &trans       &trans       &trans     &trans    &trans  &mo 5           &trans          &trans        &trans
             >;
         };
 
@@ -488,20 +505,10 @@
 &trans  &kp AT            &kp LEFT_BRACKET  &td_2   &kp RIGHT_BRACKET  &kp GRAVE                            &kp CARET   &kp LT     &kp TILDE     &kp GT    &kp AMPS  &trans
 &trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1   &kp RPAR           &kp DOUBLE_QUOTES                    &kp DOLLAR  &kp LBRC   &kp QUESTION  &kp RBRC  &kp SEMI  &trans
 &trans  &ru LS(NUMBER_3)  &td_5             &td_3   &td_4              &td_6                                &kp PIPE    &kp SLASH  &kp COMMA     &kp DOT   &kp APOS  &trans
-                          &trans            &trans  &trans             &mo 6              &trans    &trans  &trans      &trans     &trans        &trans
+                          &trans            &trans  &trans             &mo 5              &trans    &trans  &trans      &trans     &trans        &trans
             >;
 
             display-name = "Symbols";
-        };
-
-        sym_ru {
-            display-name = "Symbols";
-            bindings = <
-&trans  &en AT            &en LEFT_BRACKET  &td_2     &en RIGHT_BRACKET  &en GRAVE                            &en CARET   &en LT     &en TILDE     &en GT    &en AMPS  &trans
-&trans  &kp LS(NUMBER_5)  &kp LPAR          &td_1     &kp RPAR           &en DOUBLE_QUOTES                    &en DOLLAR  &en LBRC   &en QUESTION  &en RBRC  &en SEMI  &trans
-&trans  &kp LS(NUMBER_3)  &td_5_ru          &td_3_ru  &td_4_ru           &td_6                                &en PIPE    &en SLASH  &en COMMA     &en DOT   &en APOS  &trans
-                          &trans            &trans    &trans             &mo 6              &trans    &trans  &trans      &trans     &trans        &trans
-            >;
         };
 
         adj {
@@ -518,7 +525,7 @@
         mouse {
             bindings = <
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &mo 8   &mkp MB3  &mkp MB2  &mkp MB1  &mo 9                     &mo 9   &mkp MB1  &mkp MB2  &mkp MB3  &mo 8   &trans
+&trans  &mo 7   &mkp MB3  &mkp MB2  &mkp MB1  &mo 8                     &mo 8   &mkp MB1  &mkp MB2  &mkp MB3  &mo 7   &trans
 &trans  &trans  &trans    &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans  &trans
                 &trans    &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans
             >;
