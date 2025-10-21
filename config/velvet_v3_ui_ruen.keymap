@@ -122,6 +122,11 @@
             bindings = <&kp LEFT_ALT>;
             key-positions = <41 42>;
         };
+
+        mouse_sniper {
+            bindings = <&mo 7>;
+            key-positions = <36 37>;
+        };
     };
 
     macros {
