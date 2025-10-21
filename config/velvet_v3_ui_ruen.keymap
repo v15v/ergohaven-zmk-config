@@ -124,7 +124,7 @@
         };
 
         mouse_sniper {
-            bindings = <&mo 7>;
+            bindings = <&cap_sen 7 MB3>;
             key-positions = <36 37>;
         };
     };
