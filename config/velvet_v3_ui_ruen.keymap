@@ -128,9 +128,9 @@
             key-positions = <36 37>;
         };
 
-        to_nav {
-            bindings = <&mo 3>;
-            key-positions = <40 39>;
+        Alt2 {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <44 45>;
         };
     };
 
