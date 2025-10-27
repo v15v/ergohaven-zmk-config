@@ -127,6 +127,11 @@
             bindings = <&cap_sen 7 MB3>;
             key-positions = <36 37>;
         };
+
+        to_nav {
+            bindings = <&mo 3>;
+            key-positions = <40 39>;
+        };
     };
 
     macros {
