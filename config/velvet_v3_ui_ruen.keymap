@@ -453,8 +453,7 @@
                 <&kp LG(SPACE)>;
 
             label = "RU_TEMP_EN";
-            tap-ms = <5>;
-            wait-ms = <150>;
+            tap-ms = <150>;
         };
 
         ru_to_nav_en: ru_to_nav_en {
