@@ -459,10 +459,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LG(SPACE)>,
                 <&macro_press>,
                 <&mo 2>,
+                <&macro_tap>,
+                <&kp LG(SPACE)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 2>,
