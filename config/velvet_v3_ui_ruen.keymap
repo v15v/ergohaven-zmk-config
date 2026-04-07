@@ -455,7 +455,7 @@
             label = "RU_TEMP_EN";
         };
 
-        ru_to_nav: ru_to_nav_en {
+        ru_to_nav: ru_to_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -469,7 +469,7 @@
                 <&macro_tap>,
                 <&kp LG(SPACE)>;
 
-            label = "RU_TO_NAV_EN";
+            label = "RU_TO_NAV";
         };
     };
 
